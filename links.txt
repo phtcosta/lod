@@ -1,0 +1,10 @@
+https://lod-cloud.net/#
+http://sparqles.ai.wu.ac.at/availability
+https://dws.informatik.uni-mannheim.de/en/research/rapidminerlodextension/
+
+https://dbpedia.org/sparql
+https://query.wikidata.org/
+
+http://databank.worldbank.org/data/home
+https://datacatalog.worldbank.org/dataset/world-development-indicators
+https://datahelpdesk.worldbank.org/knowledgebase/articles/898599-api-indicator-queries

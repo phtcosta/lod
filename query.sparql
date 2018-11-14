@@ -1,0 +1,33 @@
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+PREFIX dbr: <http://dbpedia.org/resource/>
+PREFIX dbpedia2: <http://dbpedia.org/property/>
+
+SELECT 
+  ?countryName 
+  ?latns ?longew
+  ?areaRank ?populationTotal 
+  ?_gdpNominal ?_gdpNominalPerCapita
+  ?_gdpPpp ?_gdpPppPerCapita
+  ?hdi ?hdiRank 
+  ?gini
+WHERE {
+ ?country a dbo:Country . 
+ ?country rdfs:label ?_countryName . 
+ BIND (STR(?_countryName)  AS ?countryName) .
+ ?country dbpedia2:latns ?latns . 
+ ?country dbpedia2:longew ?longew .
+ ?country dbpedia2:areaRank ?areaRank.
+ ?country dbo:populationTotal ?populationTotal.
+ ?country dbpedia2:gdpNominal ?_gdpNominal.
+ ?country dbpedia2:gdpNominalPerCapita ?_gdpNominalPerCapita.
+ ?country dbpedia2:gdpPppPerCapita ?_gdpPppPerCapita.
+ ?country dbpedia2:gdpPpp ?_gdpPpp.
+ OPTIONAL { ?country dbpedia2:hdi ?hdi }.
+ OPTIONAL { ?country dbpedia2:hdiRank ?hdiRank }.
+ ?country dbpedia2:gini ?gini.
+ FILTER NOT EXISTS { ?country dbo:dissolutionYear ?yearEnd }.
+ FILTER (langMatches(lang(?_countryName), "EN")) .
+}
