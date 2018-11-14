@@ -2,6 +2,8 @@ https://lod-cloud.net/#
 http://sparqles.ai.wu.ac.at/availability
 https://dws.informatik.uni-mannheim.de/en/research/rapidminerlodextension/
 
+https://s3.amazonaws.com/rapidminer.releases/rapidminer-studio/6.5.2/rapidminer-studio-6.5.2.zip
+
 https://dbpedia.org/sparql
 https://query.wikidata.org/
 
